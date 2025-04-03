@@ -1,17 +1,14 @@
 import sys
 
-reports = []
 lines = []
 safe = 0
 unsafe = 0
 
 for line in sys.stdin: #gathers line by line inputs 
-    lines.append(line.rstrip('\n'))
+    lines.append(line.rstrip('\n').split())
 
-for line in lines: #sets each input in each line to its own str
-    reports.append(line.split(' '))
 
-for report in reports:
+for report in lines:
     num_report = list(map(int, report))
         
     inc_report = sorted(num_report)
